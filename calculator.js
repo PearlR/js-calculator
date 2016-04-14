@@ -5,6 +5,7 @@ var currentOperator = ''
 function clearButton () {
   backgroundNumber = ''
   foregroundNumber = ''
+  currentOperator = ''
   setOnscreenNumber(foregroundNumber)
 }
 
@@ -20,31 +21,37 @@ function numberButton (number) {
 }
 
 function pointButton () {
-  if (!foregroundNumber.includes('.'))
+  if (!foregroundNumber.includes('.')) {
+    if (foregroundNumber === '')
+      foregroundNumber += 0
     foregroundNumber += '.'
-  setOnscreenNumber(foregroundNumber + '0')
+  }
+  setOnscreenNumber(foregroundNumber)
 }
 
 function operatorButton (operator) {
-  if (currentOperator !== '')
-    evaluate()
-  currentOperator = operator
-}
-
-function evaluate () {
-  backgroundNumber = eval(evalSafe(backgroundNumber) + operator + evalSafe(foregroundNumber))
+  backgroundNumber = (currentOperator !== '') ? evaluate() : foregroundNumber
   foregroundNumber = ''
+  currentOperator = operator
   setOnscreenNumber(backgroundNumber)
 }
 
+function evaluate () {
+  return eval(evalSafe(backgroundNumber) + currentOperator + evalSafe(foregroundNumber))
+}
+
 function evalSafe (number) {
-  return (number.length === 0 || number[number.length - 1] === '.') ? number + '0' : number
+  return (number === '' || number[number.length - 1] === '.') ? number + '0' : number
 }
 
 function equalsButton () {
-
+  if (currentOperator !== '') {
+    backgroundNumber = evaluate()
+    foregroundNumber = ''
+    setOnscreenNumber(backgroundNumber)
+  }
 }
 
 function setOnscreenNumber (number) {
-  document.getElementById('onscreen').innerHTML = number
+  document.getElementById('onscreen').innerHTML = evalSafe(number)
 }
