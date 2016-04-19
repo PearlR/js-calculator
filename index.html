@@ -11,46 +11,47 @@
 </head>
 
 <body>
-
-  <div class="middle">
-    <table>
-      <thead>
-        <tr>
-          <th id="onscreen" colspan="4">Pearl &amp; Broc's Calc</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><button onclick="clearButton()">AC</button></td>
-          <td><button onclick="clearEntryButton()">CE</button></td>
-          <td><button onclick="operatorButton('%')">&#37;</button></td>
-          <td><button onclick="operatorButton('/')">&divide;</button></td>
-        </tr>
-        <tr>
-          <td><button onclick="numberButton('1')">1</button></td>
-          <td><button onclick="numberButton('2')">2</button></td>
-          <td><button onclick="numberButton('3')">3</button></td>
-          <td><button onclick="operatorButton('*')">&times;</button></td>
-        </tr>
-        <tr>
-          <td><button onclick="numberButton('4')">4</button></td>
-          <td><button onclick="numberButton('5')">5</button></td>
-          <td><button onclick="numberButton('6')">6</button></td>
-          <td><button onclick="operatorButton('-')">&minus;</button></td>
-        </tr>
-        <tr>
-          <td><button onclick="numberButton('7')">7</button></td>
-          <td><button onclick="numberButton('8')">8</button></td>
-          <td><button onclick="numberButton('9')">9</button></td>
-          <td rowspan="2"><button onclick="operatorButton('+')">&#43;</button></td>
-        </tr>
-        <tr>
-          <td><button onclick="numberButton('0')">0</button></td>
-          <td><button onclick="pointButton()">&#46;</button></td>
-          <td><button onclick="equalsButton()">&#61;</button></td>
-        </tr>
-      </tbody>
-    </table>
+  <div id="background">
+    <div class="middle">
+      <table>
+        <thead>
+          <tr>
+            <th id="onscreen" colspan="4">Pearl &amp; Broc's Calc</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><button onclick="clearButton()">AC</button></td>
+            <td><button onclick="clearEntryButton()">CE</button></td>
+            <td><button onclick="operatorButton('%')">&#37;</button></td>
+            <td><button onclick="operatorButton('/')">&divide;</button></td>
+          </tr>
+          <tr>
+            <td><button onclick="numberButton('1')">1</button></td>
+            <td><button onclick="numberButton('2')">2</button></td>
+            <td><button onclick="numberButton('3')">3</button></td>
+            <td><button onclick="operatorButton('*')">&times;</button></td>
+          </tr>
+          <tr>
+            <td><button onclick="numberButton('4')">4</button></td>
+            <td><button onclick="numberButton('5')">5</button></td>
+            <td><button onclick="numberButton('6')">6</button></td>
+            <td><button onclick="operatorButton('-')">&minus;</button></td>
+          </tr>
+          <tr>
+            <td><button onclick="numberButton('7')">7</button></td>
+            <td><button onclick="numberButton('8')">8</button></td>
+            <td><button onclick="numberButton('9')">9</button></td>
+            <td rowspan="2"><button onclick="operatorButton('+')">&#43;</button></td>
+          </tr>
+          <tr>
+            <td><button onclick="numberButton('0')">0</button></td>
+            <td><button onclick="pointButton()">&#46;</button></td>
+            <td><button onclick="equalsButton()">&#61;</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
 </body>
